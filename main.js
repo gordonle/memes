@@ -22,11 +22,9 @@ async function yeet(songName) {
   await delay(2000);  
 
   const b = await page.evaluate(function() {
-    const stuff = Array.from(querySelectorShadowDom.querySelectorAllDeep('party-track div.icon-wrapper paper-icon-button'));
+    const stuff = Array.from(querySelectorShadowDom.querySelectorAllDeep('party-track div.icon-wrapper paper-icon-button[title="Vote for Despacito"]'));
     return stuff.map(thing => {
-      if (thing.title === `Vote for Despacito`) {
-        thing.click(); 
-      }
+      thing.click(); 
     })
   });
 
