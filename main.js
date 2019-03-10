@@ -7,7 +7,7 @@ const delay = time => new Promise(resolve => {
 });
 
 async function yeet(songName) {
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
   await page.goto('https://festify.us/party/-L_bwk5fe6ArgA_18f9J');
 
@@ -22,7 +22,7 @@ async function yeet(songName) {
   await delay(2000);  
 
   const b = await page.evaluate(function() {
-    const stuff = Array.from(querySelectorShadowDom.querySelectorAllDeep('party-track div.icon-wrapper paper-icon-button[title="Vote for Despacito"]'));
+    const stuff = Array.from(querySelectorShadowDom.querySelectorAllDeep('party-track div.icon-wrapper paper-icon-button[title="Vote for Shallow"]'));
     return stuff.map(thing => {
       thing.click(); 
     })
