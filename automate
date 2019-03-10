@@ -5,7 +5,8 @@
 
 i=1
 while [ "$i" -le "$2" ]; do
-    $1
+    node $1
+    echo "yeeting $i"
     i=$((i+1))
 done
 

@@ -22,7 +22,7 @@ async function yeet(songName) {
   await delay(2000);  
 
   const b = await page.evaluate(function() {
-    const stuff = Array.from(querySelectorShadowDom.querySelectorAllDeep('party-track div.icon-wrapper paper-icon-button[title="Vote for Shallow"]'));
+    const stuff = Array.from(querySelectorShadowDom.querySelectorAllDeep(`party-track div.icon-wrapper paper-icon-button[title="Vote for Hotel Room Service"]`));
     return stuff.map(thing => {
       thing.click(); 
     })
