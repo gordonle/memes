@@ -6,7 +6,7 @@ const delay = time => new Promise(resolve => {
   setTimeout(resolve, time)
 });
 
-async function yeet(songName) {
+async function yeet() {
   const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
   await page.goto('https://festify.us/party/-L_bwk5fe6ArgA_18f9J');
@@ -19,13 +19,11 @@ async function yeet(songName) {
     ) 
   });
 
-  await delay(2000);  
+  await delay(4000);  
 
   const b = await page.evaluate(function() {
-    const stuff = Array.from(querySelectorShadowDom.querySelectorAllDeep(`party-track div.icon-wrapper paper-icon-button[title="Vote for Hotel Room Service"]`));
-    return stuff.map(thing => {
-      thing.click(); 
-    })
+    const stuff = querySelectorShadowDom.querySelectorDeep(`party-track div.icon-wrapper paper-icon-button[title="Vote for Chicken Fried"]`);
+    return stuff.click()
   });
 
   await browser.close();
