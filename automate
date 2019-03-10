@@ -3,7 +3,10 @@
 # $1 is the python script
 # $2 is the number of times
 
-for i in {0..$2}; do
+i=1
+while [ "$i" -le "$2" ]; do
     $1
+    i=$((i+1))
 done
+
 
