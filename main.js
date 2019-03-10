@@ -22,7 +22,7 @@ async function yeet() {
   await delay(4000);  
 
   const b = await page.evaluate(function() {
-    const stuff = querySelectorShadowDom.querySelectorDeep(`party-track div.icon-wrapper paper-icon-button[title="Vote for Chicken Fried"]`);
+    const stuff = querySelectorShadowDom.querySelectorDeep(`party-track div.icon-wrapper paper-icon-button[title="Vote for The Climb"]`);
     return stuff.click()
   });
 
