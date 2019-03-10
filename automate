@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# $2 is the python script
+# $3 is the code
+# $4 is the song we want to vote for
+# $5 is the number of votes we want
+
+for i in {0..$5}; do
+    $2 $3 $4
+done
+
